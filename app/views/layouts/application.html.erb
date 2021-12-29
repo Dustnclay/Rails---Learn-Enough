@@ -11,20 +11,21 @@
   </head>
 
   <body>
-    <nav>
-      <img>
-        <%=link_to  image_tag('book.png', alt:'book logo' )%>
-      </img>
 
-      <ul>
-        <li><%= link_to 'Home','#'%> </li>
-        <li><%= link_to 'About','#'%> </li>
-        <li><%= link_to 'Contact','#'%> </li>
-        <li><%= link_to 'Help','#'%> </li>
+    <nav class='row navSpace'>
 
+      <%=link_to  image_tag('book.png', alt:'book logo' ,height:150)%>
+      <div>
+        <h1>Bookkeeper</h1>
 
+        <ul class='row navSpace'>
+          <li><%= link_to 'Home','#'%> </li>
+          <li><%= link_to 'About','#'%> </li>
+          <li><%= link_to 'Contact','#'%> </li>
+          <li><%= link_to 'Help','#'%> </li>
+        </ul>
+      </div>
 
-      </ul>
     </nav>
     <div class='container'>
       <%= yield %>  
