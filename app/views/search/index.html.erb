@@ -1,0 +1,14 @@
+<div class='center'>
+
+<%= form_with(url: search_path, method: "get", local: true) do %>
+  <%= label_tag(:book, "Enter book name:") %>
+  <%= text_field_tag(:book) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @response %> 
+  <div>
+    <%= @response.body[docs] %>
+  </div>
+<% end %>
+</div>
