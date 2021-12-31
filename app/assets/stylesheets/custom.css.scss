@@ -96,3 +96,11 @@ body {
     text-decoration: none;
   }
   
+  .bookSearchResult{
+    font-size: 2em;
+  }
+  .bookSearchResult button{
+    :hover{
+      color: chartreuse;
+    }
+  }
