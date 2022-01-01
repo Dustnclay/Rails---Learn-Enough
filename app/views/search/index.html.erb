@@ -22,7 +22,11 @@
     <h3>Average Number of pages:
         <%= JSON.parse(@response.body)['docs'][0]['number_of_pages_median']%>
     </h3>
-    <button><span>☆</span></button>
+    <button>
+        <span>☆</span>  
+        <%= link_to '🛒 ','https://www.amazon.com/s?k='+ JSON.parse(@response.body)['docs'][0]['title'] +'+book', target: :_blank%>
+
+    </button>
 
 
         </div>
