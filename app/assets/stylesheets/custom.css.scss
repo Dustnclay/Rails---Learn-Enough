@@ -51,8 +51,9 @@ body {
   }
 
   .row{
-      display:flex;
-      flex-direction: row;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
   }
 
   .col{
@@ -99,7 +100,7 @@ body {
   .bookSearchResult{
     font-size: 2em;
   }
-  .bookSearchResult button{
+  .bookSearchResult span{
     :hover{
       color: gold;
     }

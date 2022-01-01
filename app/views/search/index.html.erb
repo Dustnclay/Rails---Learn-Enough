@@ -1,33 +1,37 @@
 
-<div class='center'>
+<div>
 
 <%= form_with(url: search_path, method: "get", local: true) do %>
-  <%= label_tag(:book, "Enter book name:") %>
-  <%= text_field_tag(:book) %>
-  <%= submit_tag("Search") %>
+  <h1><%= label_tag(:book, "Enter book name:") %></h2>
+  <h1><%= text_field_tag(:book) %></h1>
+  <h1><%= submit_tag("Search") %></h1>
 <% end %>
 </div>
 <% if @response %> 
+  <div class='row center'>
+    <%=link_to  image_tag('bookCover.png', alt:'book cover' ,height:250)%>
 
-  <div class='bookSearchResult container center col'>
-    <h2>
-      <%= JSON.parse(@response.body)['docs'][0]['title']%> 
-    </h2>  
-    <h3>Written by 
-        <%= JSON.parse(@response.body)['docs'][0]['author_name'][0]%>
-    </h3>
-    <h3>Published:
-        <%= JSON.parse(@response.body)['docs'][0]['first_publish_year']%>
-    </h3>
-    <h3>Average Number of pages:
-        <%= JSON.parse(@response.body)['docs'][0]['number_of_pages_median']%>
-    </h3>
-    <button>
-        <span>☆</span>  
-        <%= link_to '🛒 ','https://www.amazon.com/s?k='+ JSON.parse(@response.body)['docs'][0]['title'] +'+book', target: :_blank%>
+    <div class='bookSearchResult container center col'>
 
-    </button>
+      <h2>
+        <%= JSON.parse(@response.body)['docs'][0]['title']%> 
+      </h2>  
+      <h3>Written by 
+          <%= JSON.parse(@response.body)['docs'][0]['author_name'][0]%>
+      </h3>
+      <h3>Published:
+          <%= JSON.parse(@response.body)['docs'][0]['first_publish_year']%>
+      </h3>
+      <h3>Average Number of pages:
+          <%= JSON.parse(@response.body)['docs'][0]['number_of_pages_median']%>
+      </h3>
+      <span>
+          <span>☆</span>  
+          <%= link_to '🛒 ','https://www.amazon.com/s?k='+ JSON.parse(@response.body)['docs'][0]['title'] +'+book', target: :_blank%>
+
+      </span>
 
 
-        </div>
+    </div>
+  </div>
 <% end %>
